@@ -18,12 +18,15 @@ import Objetos.Profesional;
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTable;
 
 public class Acceso extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -55,16 +58,6 @@ public class Acceso extends JFrame {
 		Login system = new Login();
 		Control_Pacientes sistema = new Control_Pacientes();
 		
-		JTextPane txtpnUsuario = new JTextPane();
-		txtpnUsuario.setText("Usuario");
-		txtpnUsuario.setBounds(59, 53, 67, 19);
-		contentPane.add(txtpnUsuario);
-		
-		JTextPane txtpnContrasea = new JTextPane();
-		txtpnContrasea.setText("Contrase\u00F1a");
-		txtpnContrasea.setBounds(59, 82, 67, 19);
-		contentPane.add(txtpnContrasea);
-		
 		textField = new JTextField();
 		textField.setBounds(136, 53, 96, 19);
 		contentPane.add(textField);
@@ -75,7 +68,7 @@ public class Acceso extends JFrame {
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JButton btnResgristrarse = new JButton("Resgristrarse");
+		JButton btnResgristrarse = new JButton("Registrarse");
 		btnResgristrarse.setBounds(105, 175, 173, 38);
 		btnResgristrarse.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
@@ -93,7 +86,7 @@ public class Acceso extends JFrame {
 				Profesional b = system.profesional_login(textField.getText(), textField_1.getText());
 				
 				if (a == null && b == null) {
-					JOptionPane.showMessageDialog(null,"No existe ese Usuario con esa Contraseña","Error",JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null,"No existe ese Usuario con esa Contraseï¿½a","Error",JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 				else if (b != null){
@@ -107,10 +100,22 @@ public class Acceso extends JFrame {
 				}
 				
 				else {
-					JOptionPane.showMessageDialog(null,"No existe ese Usuario con esa Contraseña","Error",JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null,"No existe ese Usuario con esa Contraseï¿½a","Error",JOptionPane.INFORMATION_MESSAGE);
 				}
 			} 
 		});
 		contentPane.add(btnIngresar);
+		
+		JLabel lblUsuario = new JLabel("Usuario");
+		lblUsuario.setBounds(80, 55, 61, 16);
+		contentPane.add(lblUsuario);
+		
+		JLabel lblContrasea = new JLabel("ContraseÃ±a");
+		lblContrasea.setBounds(63, 84, 76, 16);
+		contentPane.add(lblContrasea);
+		
+		table = new JTable();
+		table.setBounds(192, 84, 1, 1);
+		contentPane.add(table);
 	}
 }
