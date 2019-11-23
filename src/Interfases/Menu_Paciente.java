@@ -1,7 +1,5 @@
 package Interfases;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -36,7 +34,7 @@ public class Menu_Paciente extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnSacarTurno = new JButton("Sacar turno");
-		btnSacarTurno.setBounds(129, 42, 154, 49);
+		btnSacarTurno.setBounds(142, 67, 154, 49);
 		btnSacarTurno.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Sacar_Turno pantalla = new Sacar_Turno(access, user);
@@ -45,8 +43,14 @@ public class Menu_Paciente extends JFrame {
 		});
 		contentPane.add(btnSacarTurno);
 		
-		JButton btnVerTurno = new JButton("Ver turno");
-		btnVerTurno.setBounds(129, 148, 154, 49);
+		JButton btnVerTurno = new JButton("Ver turnos");
+		btnVerTurno.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Mostrar_Turnos pantalla = new Mostrar_Turnos(access, user);
+				pantalla.setVisible(true);
+			}
+		});
+		btnVerTurno.setBounds(142, 138, 154, 49);
 		contentPane.add(btnVerTurno);
 	}
 

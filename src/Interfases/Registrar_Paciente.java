@@ -1,8 +1,5 @@
 package Interfases;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -112,7 +109,14 @@ public class Registrar_Paciente extends JFrame {
 		contentPane.add(btnCrearPaciente);
 		btnCrearPaciente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				system.registrar_Paciente(Integer.parseInt(dni.getText()), nombre.getText(), domicilio.getText(), mail.getText(), Integer.parseInt(telefono.getText()), usuario.getText(), password.getText());
+				system.registrar_Paciente(	Integer.parseInt(dni.getText()), 
+											nombre.getText(), 
+											domicilio.getText(), 
+											mail.getText(), 
+											Integer.parseInt(telefono.getText()), 
+											usuario.getText(), 
+											password.getText()
+										);
 				JOptionPane.showMessageDialog(null,"El usuario se a creado",".",JOptionPane.INFORMATION_MESSAGE);
 
 			}

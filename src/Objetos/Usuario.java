@@ -92,7 +92,6 @@ public abstract class Usuario {
 		this.password = password;
 	}
 	
-	public abstract boolean soyPro();
 	
 	public boolean soyYo(String usuario, String password) {
 		return ((usuario+" "+password).equals(this.usuario+" "+this.password));

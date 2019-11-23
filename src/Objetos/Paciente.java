@@ -14,18 +14,11 @@ public class Paciente extends Usuario {
 
 	}
 
-	
-	@Override
-	public boolean soyPro() {
-		// TODO Auto-generated method stub
-		return false;
+
+	public void sacar_Turno(String fecha, String medico) {
+		mis_Turnos.add(new Turno(this, medico, fecha));
 	}
-	
-	
-	public void sacar_Turno(String fecha) {
-		mis_Turnos.add(new Turno(this, fecha));
-	}
-	
+
 	
 	
 

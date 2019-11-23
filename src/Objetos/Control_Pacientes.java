@@ -21,9 +21,9 @@ public class Control_Pacientes {
 		return true;
 	}
 	
-	public boolean crear_turno(Paciente user,String fecha) {
+	public boolean crear_turno(Paciente user, String profesional, String fecha) {
 		if (buscar_turno(fecha) == true) {
-			dias_Disponibles.add(new Turno(user, fecha));
+			dias_Disponibles.add(new Turno(user, profesional, fecha));
 			return true;
 		}
 		
