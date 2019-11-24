@@ -17,13 +17,14 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.JPasswordField;
 
 public class Acceso extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
 	private JTable table;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -55,22 +56,30 @@ public class Acceso extends JFrame {
 		Login system = new Login();
 		Control_Pacientes sistema = new Control_Pacientes();
 		
+		JLabel lblUsuario = new JLabel("Usuario");
+		lblUsuario.setBounds(102, 53, 61, 16);
+		contentPane.add(lblUsuario);
+		
 		textField = new JTextField();
 		textField.setBounds(173, 51, 96, 19);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(173, 81, 96, 19);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		
+		JLabel lblContrasea = new JLabel("Contraseña");
+		lblContrasea.setBounds(86, 83, 76, 16);
+		contentPane.add(lblContrasea);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(173, 81, 96, 20);
+		contentPane.add(passwordField);
 		
 		
 		JButton btnIngresar = new JButton("Ingresar");
 		btnIngresar.setBounds(139, 128, 173, 38);
 		btnIngresar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				Paciente a = system.paciente_login(textField.getText(), textField_1.getText());
+				Paciente a = system.paciente_login(textField.getText(), new String(passwordField.getPassword()));
 
 				if (a == null)
 					JOptionPane.showMessageDialog(null,"No existe ese Usuario con esa Contraseña","Error",JOptionPane.INFORMATION_MESSAGE);
@@ -94,16 +103,10 @@ public class Acceso extends JFrame {
 		});
 		contentPane.add(btnRegistrarPaciente);
 		
-		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setBounds(102, 53, 61, 16);
-		contentPane.add(lblUsuario);
-		
-		JLabel lblContrasea = new JLabel("Contraseña");
-		lblContrasea.setBounds(86, 83, 76, 16);
-		contentPane.add(lblContrasea);
-		
 		table = new JTable();
 		table.setBounds(192, 84, 1, 1);
 		contentPane.add(table);
+		
+
 	}
 }

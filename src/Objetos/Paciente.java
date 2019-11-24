@@ -4,7 +4,6 @@ import java.util.Vector;
 
 public class Paciente extends Usuario {
 	
-	
 	private Vector<Turno> mis_Turnos;
 	
 	
@@ -18,8 +17,5 @@ public class Paciente extends Usuario {
 	public void sacar_Turno(String fecha, String medico) {
 		mis_Turnos.add(new Turno(this, medico, fecha));
 	}
-
-	
-	
 
 }

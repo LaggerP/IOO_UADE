@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class Registrar_Paciente extends JFrame {
 
@@ -23,6 +24,7 @@ public class Registrar_Paciente extends JFrame {
 	private JTextField telefono;
 	private JTextField usuario;
 	private JTextField password;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -98,15 +100,18 @@ public class Registrar_Paciente extends JFrame {
 		usuario.setBounds(153, 169, 96, 19);
 		contentPane.add(usuario);
 		usuario.setColumns(10);
-		
-		password = new JTextField();
-		password.setBounds(153, 198, 96, 19);
-		contentPane.add(password);
-		password.setColumns(10);
+
+		passwordField = new JPasswordField();
+		passwordField.setBounds(153, 198, 96, 19);
+		contentPane.add(passwordField);
+		passwordField.setColumns(10);
 		
 		JButton btnCrearPaciente = new JButton("CREAR PACIENTE");
 		btnCrearPaciente.setBounds(117, 232, 162, 21);
 		contentPane.add(btnCrearPaciente);
+		
+	
+		
 		btnCrearPaciente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				system.registrar_Paciente(	Integer.parseInt(dni.getText()), 
@@ -115,7 +120,7 @@ public class Registrar_Paciente extends JFrame {
 											mail.getText(), 
 											Integer.parseInt(telefono.getText()), 
 											usuario.getText(), 
-											password.getText()
+											new String(passwordField.getPassword())
 										);
 				JOptionPane.showMessageDialog(null,"El usuario se a creado",".",JOptionPane.INFORMATION_MESSAGE);
 
@@ -124,6 +129,4 @@ public class Registrar_Paciente extends JFrame {
 		
 		
 	}
-
-
 }

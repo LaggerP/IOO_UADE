@@ -31,7 +31,7 @@ public class Sacar_Turno extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Sacar_Turno(Control_Pacientes sys,Paciente user) {
+	public Sacar_Turno(Control_Pacientes sys, Paciente user) {
 		setTitle("Turno");
 		setBounds(100, 100, 450, 247);
 		contentPane = new JPanel();
@@ -41,7 +41,7 @@ public class Sacar_Turno extends JFrame {
 		
 		
 		
-		JSpinner spinner = new JSpinner();
+		JSpinner spinner = new JSpinner();         
 		spinner.setModel(new SpinnerDateModel(new Date(1548558000000L), null, null, Calendar.DAY_OF_YEAR));
 		spinner.setBounds(20, 10, 388, 20);
 		contentPane.add(spinner);
@@ -63,7 +63,7 @@ public class Sacar_Turno extends JFrame {
 				String fecha = spinner.getValue().toString();
 				String medico = txtFieldMedico.getText();
 				if (sys.buscar_turno(fecha)) {
-					user.sacar_Turno(fecha, medico);
+					user.sacar_Turno(fecha, medico); //se agrega el turno al Vector mis_Turnos del :Paciente
 					sys.crear_turno(user, fecha, medico);
 					JOptionPane.showMessageDialog(null,"El turno se a creado",".",JOptionPane.INFORMATION_MESSAGE);
 				}

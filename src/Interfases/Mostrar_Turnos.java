@@ -4,11 +4,19 @@ import javax.swing.JFrame;
 
 import Objetos.Control_Pacientes;
 import Objetos.Paciente;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class Mostrar_Turnos extends JFrame {
 
 	public Mostrar_Turnos(Control_Pacientes access, Paciente user) {
-		// TODO Auto-generated constructor stub
+		
+		JLabel lblMainTitle = new JLabel("Usted posee los siguientes turnos asignados a su usuario");
+		lblMainTitle.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblMainTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		getContentPane().add(lblMainTitle, BorderLayout.NORTH);
 	}
 
 }
