@@ -122,7 +122,7 @@ public class Registrar_Paciente extends JFrame {
 											usuario.getText(), 
 											new String(passwordField.getPassword())
 										);
-				JOptionPane.showMessageDialog(null,"El usuario se a creado",".",JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null,"El usuario se ha creado",".",JOptionPane.INFORMATION_MESSAGE);
 
 			}
 		});
