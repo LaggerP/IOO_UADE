@@ -48,6 +48,7 @@ public class Menu_Paciente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Mostrar_Turnos pantalla = new Mostrar_Turnos(access, user);
 				pantalla.setVisible(true);
+				pantalla.pack();
 			}
 		});
 		btnVerTurno.setBounds(142, 138, 154, 49);

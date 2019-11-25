@@ -17,5 +17,9 @@ public class Paciente extends Usuario {
 	public void sacar_Turno(String fecha, String medico) {
 		mis_Turnos.add(new Turno(this, medico, fecha));
 	}
+	
+	public Vector<Turno> mostrar_turnos() {
+		return this.mis_Turnos;
+	}
 
 }

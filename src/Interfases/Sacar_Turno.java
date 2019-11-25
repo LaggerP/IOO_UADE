@@ -47,7 +47,7 @@ public class Sacar_Turno extends JFrame {
 		contentPane.add(spinner);
 		
 		
-		JLabel lblNombreMdico = new JLabel("Nombre mÃ©dico:");
+		JLabel lblNombreMdico = new JLabel("Nombre médico:");
 		lblNombreMdico.setBounds(20, 41, 196, 14);
 		contentPane.add(lblNombreMdico);
 		
@@ -64,7 +64,7 @@ public class Sacar_Turno extends JFrame {
 				String medico = txtFieldMedico.getText();
 				if (sys.buscar_turno(fecha)) {
 					user.sacar_Turno(fecha, medico); //se agrega el turno al Vector mis_Turnos del :Paciente
-					sys.crear_turno(user, fecha, medico);
+					sys.crear_turno(user, medico, fecha);
 					JOptionPane.showMessageDialog(null,"El turno se ha creado",".",JOptionPane.INFORMATION_MESSAGE);
 				}
 				else {
