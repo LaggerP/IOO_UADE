@@ -1,4 +1,4 @@
-package Objetos;
+package objetos;
 
 public abstract class Usuario {
 	protected int dni;

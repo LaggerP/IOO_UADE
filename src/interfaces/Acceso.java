@@ -1,4 +1,4 @@
-package Interfases;
+package interfaces;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -9,9 +9,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Objetos.Control_Pacientes;
-import Objetos.Login;
-import Objetos.Paciente;
+import objetos.Control_Pacientes;
+import objetos.Login;
+import objetos.Paciente;
 
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;

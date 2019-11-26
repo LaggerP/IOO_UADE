@@ -1,4 +1,4 @@
-package Interfases;
+package interfaces;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Objetos.Control_Pacientes;
-import Objetos.Paciente;
+import objetos.Control_Pacientes;
+import objetos.Paciente;
 
 import javax.swing.JButton;
 

@@ -1,14 +1,15 @@
-package Interfases;
+package interfaces;
 
 import javax.swing.JFrame;
-
-import Objetos.Control_Pacientes;
-import Objetos.Paciente;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import java.awt.Container;
 
 import javax.swing.SwingConstants;
+
+import objetos.Control_Pacientes;
+import objetos.Paciente;
+
 import java.awt.Font;
 import java.awt.GridLayout;
 
