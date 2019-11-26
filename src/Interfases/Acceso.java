@@ -14,16 +14,17 @@ import Objetos.Login;
 import Objetos.Paciente;
 
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JPasswordField;
+import java.awt.Color;
 
 public class Acceso extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTable table;
 	private JPasswordField passwordField;
 
 	/**
@@ -47,7 +48,7 @@ public class Acceso extends JFrame {
 	 */
 	public Acceso() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 426);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -56,27 +57,32 @@ public class Acceso extends JFrame {
 		Login system = new Login();
 		Control_Pacientes sistema = new Control_Pacientes();
 		
+		JLabel imgLabel = new JLabel(new ImageIcon(Acceso.class.getResource("/Imagenes/LogoUADE.png")));
+		imgLabel.setForeground(Color.YELLOW);
+		imgLabel.setBounds(10, 0, 414, 191);
+		contentPane.add(imgLabel);
+		
 		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setBounds(102, 53, 61, 16);
+		lblUsuario.setBounds(87, 198, 61, 16);
 		contentPane.add(lblUsuario);
 		
 		textField = new JTextField();
-		textField.setBounds(173, 51, 96, 19);
+		textField.setBounds(173, 196, 96, 19);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		
 		JLabel lblContrasea = new JLabel("Contraseña");
-		lblContrasea.setBounds(86, 83, 76, 16);
+		lblContrasea.setBounds(87, 232, 76, 16);
 		contentPane.add(lblContrasea);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(173, 81, 96, 20);
+		passwordField.setBounds(173, 230, 96, 20);
 		contentPane.add(passwordField);
 		
 		
 		JButton btnIngresar = new JButton("Ingresar");
-		btnIngresar.setBounds(139, 128, 173, 38);
+		btnIngresar.setBounds(139, 275, 173, 38);
 		btnIngresar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Paciente a = system.paciente_login(textField.getText(), new String(passwordField.getPassword()));
@@ -94,7 +100,7 @@ public class Acceso extends JFrame {
 		contentPane.add(btnIngresar);
 		
 		JButton btnRegistrarPaciente = new JButton("Registrar paciente");
-		btnRegistrarPaciente.setBounds(139, 177, 173, 38);
+		btnRegistrarPaciente.setBounds(139, 324, 173, 38);
 		btnRegistrarPaciente.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Registrar_Paciente pantalla = new Registrar_Paciente(system);
@@ -102,10 +108,6 @@ public class Acceso extends JFrame {
 			} 
 		});
 		contentPane.add(btnRegistrarPaciente);
-		
-		table = new JTable();
-		table.setBounds(192, 84, 1, 1);
-		contentPane.add(table);
 		
 
 	}
